@@ -212,9 +212,7 @@ if(isset($_SESSION['login_admin']))
 		
         <!-- footer area start-->
         <footer>
-            <div class="footer-area">
-                <p>Sistem Informasi Produk Organik</p>
-            </div>
+           
         </footer>
         <!-- footer area end-->
     </div>
