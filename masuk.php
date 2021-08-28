@@ -10,36 +10,37 @@ if(!isset($_SESSION['log'])){
 include 'dbconnect.php';
 
 
-	if(isset($_POST['login']))
-	{
-	$email = mysqli_real_escape_string($conn,$_POST['email']);
-	$pass = mysqli_real_escape_string($conn,$_POST['password']);
-	$queryuser = mysqli_query($conn,"SELECT * FROM login WHERE email='$email'");
-	$cariuser = mysqli_fetch_assoc($queryuser);
-  if ( $_POST['email'] =="" ||  $_POST['password'] =="") {
-    header("location:masuk.php?pesan=kosong");
-  }	
-		else if( password_verify($pass, $cariuser['password']) ) {
+if(isset($_POST['login']))
+{
+$npp = mysqli_real_escape_string($conn,$_POST['npp']);
+$pass = mysqli_real_escape_string($conn,$_POST['password']);
+$queryuser = mysqli_query($conn,"SELECT * FROM login WHERE npp='$npp'");
+$cariuser = mysqli_fetch_assoc($queryuser);
+if ( $_POST['npp'] =="" ||  $_POST['password'] =="") {
+  header("location:masuk.php?pesan=kosong");
+}
+		
+else if( password_verify($pass, $cariuser['password']) ) {
 			$_SESSION['id_user'] = $cariuser['id_user'];
 			$_SESSION['role'] = $cariuser['role'];
-      $_SESSION['name'] = $cariuser['username'];
+      $_SESSION['name'] = $cariuser['npp'];
       $_SESSION['log'] = "Logged";
 			header('location:index.php');
       echo 'berhasil!';
-		}  else {
+		} else if ($npp=='' || $pass=='') {
+      
+      header("location:masuk.php?pesan=kosong");
+		}	 else {
       header("location:masuk.php?pesan=gagal");
     } 
     
-	} 
-
+	}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>  
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasa Marga</title>
+<head>
+<title>Jasa Marga</title>
     <link rel="icon" href="Assets/logojm.png" type="image/icon type">
     <link rel="stylesheet" href="footer2.css"/> 
     <link rel="stylesheet" href="style3.css"/> 
@@ -159,20 +160,19 @@ include 'dbconnect.php';
                       <?php 
 	if(isset($_GET['pesan'])){
 		if($_GET['pesan']=="kosong"){
-			echo "<div class='alert''>Silahkan masukkan Email dan password</div>";
+			echo "<div class='alert'>Silahkan masukkan Email dan password</div>";
 		} else if($_GET['pesan']=="gagal"){
-      echo "<div class='alert''>Email atau password salah</div>";
+      echo "<div class='alert'>Email atau password salah</div>";
     }
     
 	}
 	?>                 
                 <form method="post"  action="#"> 
                         <div class="form-group">
-                          <input  type="text" class="form-control form-control-user" id="nomor" placeholder="Email" name="email" autofocus   >
+                          <input  type="text" class="form-control form-control-user" id="nomor" placeholder="NPP" name="npp" autofocus   >
                         </div>
                         <div class="form-group">
                           <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password"    >
-                          <a class="small" href="forgot_pass.php" style="padding-left: 2%;">Lupa Password </a>
                         </div>
                       
                        
@@ -218,7 +218,7 @@ include 'dbconnect.php';
                 <div class="footer-widget" >
                   <div class="widget-about">
                     <div class="logo_footer">
-                    <img src="Assets/logojmtxt.png" alt="logo" width="500px" class="mb-3">
+                    <img src="Assets/logojmtxt.png" alt="logo" width="200px" class="mb-3">
                     </div>
                     <h5 style="color:#004689; margin-top:10px; font-family: 'Caveat';font-size: 30px;"><i>Footer dsbg</i></h5>
                     
@@ -290,7 +290,7 @@ include 'dbconnect.php';
             <div class="row">
               <div class="col-md-12">
                 <div class="copyright-text">
-                  <p>© 2021 STUDYBOX All rights reserved.
+                  <p>© Brown Fox STUDYBOX All rights reserved.
                   </p>
                 </div>
       
@@ -300,18 +300,9 @@ include 'dbconnect.php';
           </div>
         </div>
       </footer>
-<!-- End -->
+  <!-- End -->
 
-	<script type="text/javascript">
-    $(window).scroll(function(){
-      $('nav').toggleClass('scrolled', $(this).scrollTop() > 550);
-    });
-  </script>
-  	<script type="text/javascript">
-      $(window).scroll(function(){
-        $('.logo').toggleClass('scrolled', $(this).scrollTop() > 550);
-      });   
-    </script>
-    <script src="script.js"></script>
+
+
 </body>
 </html>

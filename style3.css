@@ -21,6 +21,23 @@
     background-color:#004689;
     opacity: 0.9;
     }
+
+ span.caro1{ 
+      background-color:red !important;
+      border-radius: 15px;
+      color:white;
+      }
+      span.caro2{
+        background-color:yellow;
+        border-radius: 15px;
+        color:white;
+        }
+        span.caro3{
+          background-color:rgb(0, 182, 0);
+          border-radius: 15px;
+          color:white;
+          }
+    
   
   .carousel-fade .carousel-item {
     opacity: 0;

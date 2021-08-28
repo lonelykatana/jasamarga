@@ -1,34 +1,39 @@
 <?php
 session_start();
 include 'dbconnect.php';
+ini_set('display_errors', 1); ini_set('log_errors',1); error_reporting(E_ALL); mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+
+
+
+
 if(isset($_POST['addprod'])){
 	if(!isset($_SESSION['log']))
 		{	
 			header('location:masuk.php');
 		}
     else{
-      header('location:produk.php');
+      echo "gagaglgalgla!";
     }
   }
-  $idk = $_GET['id_kelas'];
+  
   if(isset($_POST['addpeserta']))
     {
-      $nama = $_POST['nama'];
-      $email = $_POST['email'];
-      $umur = $_POST['umur'];
-      $nowa = $_POST['nowa'];
-      $nama_kelas = $_POST['nama_kelas2'];
-      $motivation_letter = $_POST['motivation_letter'];
-  
-     
-      $tambahuser = mysqli_query($conn,"insert into data_peserta (nama, email, umur, no_wa, nama_kelas2, motivation_letter) 
-      values('$nama','$email','$umur','$nowa','$nama_kelas','$motivation_letter')");
-      
-      if ($tambahuser){
+      $cariuser['id_user']=$_SESSION['id_user'];
+$cek=$cariuser['id_user'];
+      $kategori = $_POST['kategori'];
+      $lokasi = $_POST['lokasi'];
+      $laporan = $_POST['laporan'];
+
+      $tambahuser = mysqli_query($conn,"INSERT INTO data_peserta (id_user,nama,npp,email,kategori,lokasi,laporan)
+      SELECT id_user,nama,npp,email,'$kategori' as kategori,'$lokasi' as lokasi,'$laporan' as laporan FROM login where id_user=$cek");
+
+
+      if ($tambahuser){  
       echo " <div class='alert alert-success'>
       <script>alert('Terima Kasih sudah Mendaftar Kelas di Study Box.')</script>	
-        </div>
-      <meta http-equiv='refresh' content='1; url= index.php'/>  ";
+        </div>";
+        header('location:laporanku.php');
       } else { echo "<div class='alert alert-warning'>
         Gagal mendaftar, silakan coba lagi.
         </div>
@@ -36,8 +41,9 @@ if(isset($_POST['addprod'])){
       }
       
     };
+   
 
- 
+
     
    
     
@@ -233,33 +239,30 @@ if(isset($_POST['addprod'])){
                         <div class="modal-body">
                             <form action="index.php" method="post" enctype="multipart/form-data">
 
-                           
- 
-  
-
     <label for="kategori">Kategori</label>
-    <select id="kategori" name="kategori">
-      <option value="1">opsi1</option>
-      <option value="2">opsi2</option>
-      <option value="3">opsi2</option>
+    <select id="kategori" name="kategori"  required="required">  
+      <option value="Lampu">Lampu</option>
+      <option value="Jalan">Jalan</option>
+      <option value="Portal">Portal</option>
     </select>
 
     <label for="lokasi">Lokasi</label>
-    <select id="lokasi" name="lokasi">
-      <option value="1">opsi1</option>
-      <option value="2">opsi2</option>
-      <option value="3">opsi3</option>
+    <select id="lokasi" name="lokasi"  required="required">
+      <option value="Belawan">Belawan</option>
+      <option value="Medan">Medan</option>
+      <option value="Tanjung Morawa">Tanjung Morawa</option>
     </select>
 
-    <label for="subject">Laporan</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-  </form>
-
-                            <div class="modal-footer">
+    <label for="laporan">Laporan</label>
+    <textarea id="laporan" name="laporan"  required="required" placeholder="Write something.." style="height:200px"></textarea>
+    <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" style=" padding: 6px 16px " data-dismiss="modal">Batal</button>
                                 <input name="addpeserta" type="submit" class="btn" style=" padding: 6px 16px "value="Tambah">
                             </div>
-                        </form>
+  </form>
+
+                            
+                       
                     </div>
                 </div>
                 </div>
@@ -350,7 +353,7 @@ if(isset($_POST['addprod'])){
             <div class="row">
               <div class="col-md-12">
                 <div class="copyright-text">
-                  <p>© 2021 STUDYBOX All rights reserved.
+                  <p>© 2021 Brown Fox All rights reserved.
                   </p>
                 </div>
       

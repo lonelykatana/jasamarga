@@ -3,28 +3,35 @@ session_start();
 
 include 'dbconnect.php';
 
+
 if(isset($_POST['adduser']))
 	{
+    if($_POST['password']==$_POST['password1']){
 		$nama = $_POST['nama'];
-		$username = $_POST['username'];
+		$npp = $_POST['npp'];
 		$email = $_POST['email'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
-		$tambahuser = mysqli_query($conn,"insert into login (nama, username, email, password) 
-		values('$nama','$username','$email','$password')");
-		if ($tambahuser){
-		echo " <div class='alert alert-success'>
-			Berhasil mendaftar, silakan masuk.
-		  </div>
+		$tambahuser = mysqli_query($conn,"insert into login (nama, npp, email, password) 
+		values('$nama','$npp','$email','$password')");
 
-		<meta http-equiv='refresh' content='1; url= masuk.php'/>  ";
+    if ( $_POST['nama'] =="" ||  $_POST['npp'] =="" ||$_POST['email'] =="" ||  $_POST['password'] =="") {
+      header('location:daftar.php?pesan=kosong');
+    }
+
+		else if ($tambahuser){
+		      header('location:masuk.php');
 
 		} else { echo "<div class='alert alert-warning'>
 			Gagal mendaftar, silakan coba lagi.
 		  </div>
 		 <meta http-equiv='refresh' content='1; url= daftar.php'/> ";
 		}
+  } else{
+    header("location:daftar.php?pesan=gagal");
+  }
 		
-	};
+	}
+;
 
 ?>
 <!DOCTYPE html>
@@ -139,6 +146,17 @@ if(isset($_POST['adduser']))
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Daftar Akun</h1>
                 </div>
+
+                <?php 
+	if(isset($_GET['pesan'])){
+		if($_GET['pesan']=="gagal"){
+			echo "<div class='alert'>Password Tidak Sama</div>";
+		} else if($_GET['pesan']=="kosong"){
+      echo "<div class='alert'>Silahkan Isi Form</div>";
+    }
+	}
+	?>                 
+
                   <form method="post">
                   <div class="form-group">
                     <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Nama" name="nama">
@@ -255,7 +273,7 @@ if(isset($_POST['adduser']))
             <div class="row">
               <div class="col-md-12">
                 <div class="copyright-text">
-                  <p>© 2021 STUDYBOX All rights reserved.
+                  <p>© Brown Fox STUDYBOX All rights reserved.
                   </p>
                 </div>
       

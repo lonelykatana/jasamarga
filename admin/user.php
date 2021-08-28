@@ -80,14 +80,11 @@
                 <div class="menu-inner">
                     <nav>
                     <ul class="metismenu" id="menu">
-							<li class="active"><a href="index.php"><span>Home</span></a></li>
-							<li><a href="../"><span>Kembali ke Study Box</span></a></li>
-							<li>
-                                <a href="kelas.php"><i class="ti-dashboard"></i><span>Kelola Kelas</span></a>
-                            </li>
-							
+                    <li class="active"><a href="index.php"><span>Home</span></a></li>
+							<li><a href="../"><span>Kembali ke Jasa Marga</span></a></li>							
 							<li><a href="user.php"><span>Kelola user</span></a></li>
-							<li><a href="peserta.php"><span>Kelola pendaftar kelas</span></a></li>
+							<li><a href="peserta.php"><span>Kelola Laporan</span></a></li>
+                            
                             <li>
                                 <a href="../logout.php"><span>Logout</span></a>
                                 
@@ -154,7 +151,7 @@
 											<tr>
 												<th>No.</th>
 												<th>Nama</th>
-												<th>username</th>
+												<th>NPP</th>
 												<th>Email</th>
                                                 <th>role</th>
 											</tr></thead><tbody>
@@ -168,7 +165,7 @@
 												<tr>
 													<td><?php echo $no++ ?></td>
 													<td><?php echo $p['nama'] ?></td>
-													<td><?php echo $p['username'] ?></td>
+													<td><?php echo $p['npp'] ?></td>
 													<td><?php echo $p['email'] ?></td>
                                                     <td><?php echo $p['role'] ?></td>
 													

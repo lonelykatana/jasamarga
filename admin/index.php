@@ -49,14 +49,10 @@ if(isset($_SESSION['login_admin']))
                     <nav>
                         <ul class="metismenu" id="menu">
 							<li class="active"><a href="index.php"><span>Home</span></a></li>
-							<li><a href="../"><span>Kembali ke Study Box</span></a></li>
-							<li>
-                                <a href="kelas.php"><i class="ti-dashboard"></i><span>Kelola Kelas</span></a>
-                            </li>
-							
+							<li><a href="../"><span>Kembali ke Jasa Marga</span></a></li>							
 							<li><a href="user.php"><span>Kelola user</span></a></li>
-							<li><a href="peserta.php"><span>Kelola pendaftar kelas</span></a></li>
-                            <li><a href="mentor.php"><span>Kelola mentor</span></a></li>
+							<li><a href="peserta.php"><span>Kelola Laporan</span></a></li>
+                            
                             <li>
                                 <a href="../logout.php"><span>Logout</span></a>
                                 
