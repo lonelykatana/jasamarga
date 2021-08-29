@@ -136,7 +136,7 @@
                                     <div class="data-tables datatable-dark">
 										 <table id="dataTable3" class="display" style="width:100%"><thead class="thead-dark">
 											<tr>
-                                            <th>Nomor</th>
+                                            <th style= "word-wrap: break-word;max-width: 10px;">No.</th>
                                             <th>Id Peserta</th>
                                             <th>Nama</th>
                                             <th>NPP</th>
@@ -158,7 +158,7 @@ max-width: 150px;">Laporan</th>
 												
 												<tr>
                                                 
-                                                <td> <?php echo $no++?></td></td>
+                                                <td style= "word-wrap: break-word;max-width: 10px;"> <?php echo $no++?></td></td>
                                                 <td><?php echo $p['id_peserta'] ?></td>
                                                 <td><?php echo $p['nama'] ?></td>
                                                 <td><?php echo $p['npp'] ?></td>
@@ -363,7 +363,7 @@ $('.viewbtn').on('click', function () {
 <script>
         $(document).ready(function () {
 
-            $('.deletebtn').on('click', function () {
+            $("body").on('click', '.deletebtn', function (e){
 
                 $('#deletemodal').modal('show');
 
@@ -384,7 +384,8 @@ $('.viewbtn').on('click', function () {
 <script>
         $(document).ready(function () {
 
-            $('.editbtn').on('click', function () {
+            $("body").on('click', '.editbtn', function (e){
+            
 
                 $('#editmodal').modal('show');
 
