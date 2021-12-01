@@ -32,7 +32,7 @@ if(isset($_POST['addprod'])){
 
       if ($tambahuser){  
       echo " <div class='alert alert-success'>
-      <script>alert('Terima Kasih sudah Mendaftar Kelas di Study Box.')</script>	
+      <script>alert('Terima Kasih sudah Mendaftar.')</script>	
         </div> ";
         header('laporanku.php');
       } else { echo "<div class='alert alert-warning'>
@@ -406,7 +406,7 @@ if(isset($_POST['addprod'])){
             <div class="row">
               <div class="col-md-12">
                 <div class="copyright-text">
-                  <p>© Brown Fox STUDYBOX All rights reserved.
+                  <p>© PKL Jasa Marga All rights reserved.
                   </p>
                 </div>
       
