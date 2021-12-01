@@ -375,7 +375,7 @@ $('.viewbtn').on('click', function () {
 
                 console.log(data);
 
-                $('#delete_id').val(data[0]);
+                $('#delete_id').val(data[1]);
 
             });
         });
