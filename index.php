@@ -13,7 +13,7 @@ if(isset($_POST['addprod'])){
 			header('location:masuk.php');
 		}
     else{
-      echo "gagaglgalgla!";
+      echo "Selamat Datang! Dapatkan  Standar Pelayanan Terbaik dari kami";
     }
   }
   
