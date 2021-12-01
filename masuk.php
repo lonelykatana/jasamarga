@@ -220,7 +220,7 @@ else if( password_verify($pass, $cariuser['password']) ) {
                     <div class="logo_footer">
                     <img src="Assets/logojmtxt.png" alt="logo" width="200px" class="mb-3">
                     </div>
-                    <h5 style="color:#004689; margin-top:10px; font-family: 'Caveat';font-size: 30px;"><i>Footer dsbg</i></h5>
+                    <h5 style="color:#004689; margin-top:10px; font-family: 'Caveat';font-size: 30px;"><i></i></h5>
                     
                   </div>
                 </div>
