@@ -13,7 +13,7 @@ if(isset($_POST['addprod'])){
 			header('location:masuk.php');
 		}
     else{
-      echo "Selamat Datang! Dapatkan  Standar Pelayanan Terbaik dari kami";
+      echo "Selamat Datang! Dapatkan  Standar Pelayanan Terbaik dari Kami";
     }
   }
   
@@ -159,7 +159,7 @@ $cek=$cariuser['id_user'];
 </nav>
 <div style="position:relative;">
   <img src="Assets/gambar1.jpeg" style="height:40vw;width:100%;object-fit: cover;">
-  <h5 class="centered"> <span class="caro">&nbspBla bla blablalbalblablalbalbablabla&nbsp</span>
+  <h5 class="centered"> <span class="caro">&nbspSelamat Datang! Dapatkan  Standar Pelayanan Terbaik dari Kami&nbsp</span>
 
 </div>
    
@@ -179,9 +179,9 @@ $cek=$cariuser['id_user'];
               
               <div class="content" style="margin-top:6%">
            
-              <h3>Ntah apa</h3>
+              <h3>Tentang Kami</h3>
                 <p>
-                    masukkan text apapun fjsfjsdjfsjfjsjfskjfiehrnfksjnkdf
+                PT. Jasa Marga (Persero) Tbk. Cabang BELMERA adalah Badan Usaha Milik Negara (BUMN) yang didirikan di Jakarta berdasarkan akte Notaris Kartini Muljadi, SH Nomor 1 tanggal 1 Maret 1978. PT. Jasa Marga (Persero) Tbk. Cabang BELMERA mendapat kepercayaan pemerintah untuk mengelola dan memelihara jalan tol antara lain jalan tol Belmera (Belawan, Medan, Tanjung Morawa). Proyek jalan tol BELMERA memiliki panjang 33,983 Km (Jalan Utama) ini merupakan jalan yang menghubungkan pelabuhan Belawan ke Kota Medan dan Tanjung Morawa. Jalan tol BELMERA ini juga memiliki 7 Lokasi Gerbang Tol, 51 Lokasi Gardu Operasi, 2 Interchange, 11 Lokasi Jembatan Penyebrangan Orang, 15 Lokasi Jembatan Overpass, 7 Lokasi Underpass dan 1 Lokasi Pool Ruas. 
                 </p>
               </div>
             </div>
@@ -202,7 +202,7 @@ $cek=$cariuser['id_user'];
             
                
         <h2 class="section-heading text-center">Visi</h2>
-            <p style="text-align:center; font-size:1.8vw"  style="margin-top: 1.5rem;" >" testsfjsdfhjshjfkshjkfhjkshfjhsjhfjkhsjdfhjkshfjkhjfjkhfs"</p>
+            <p style="text-align:center; font-size:1.8vw"  style="margin-top: 1.5rem;" >“Menjadi Perusahaan modern dalam bidang pengembangan dan pengoperasian jalan tol, menjadi pemimpin (leader) dalam industri jalan tol dengan mengoperasikan mayoritas jalan tol di Indonesia serta memiliki daya saing yang tinggi di tingkat Nasional dan Regional.”</p>
                        
                     
         </div>
@@ -211,7 +211,7 @@ $cek=$cariuser['id_user'];
     <section class="feature_part single_feature_padding page-section" style="padding: 4vw 0 3vw 0 ;">
         <div class="container">
         <h2 class="section-heading text-center">Misi</h2>
-            
+        <p style="text-align:center; font-size:1.8vw"  style="margin-top: 1.5rem;" >"Menambah panjang jalan tol secara berkelanjutan, sehingga perusahaan menguasai paling sedikit 50% panjang tol di Indonesia dan usaha terkait lainnya, dengan memaksimalkan pemanfaatan potensi keuangan perusahaan serta meningkatkan mutu dan efisiensi jasa pelayanan jalan tol melalui penggunaan teknologi yang optimal dan penerapan kaidah-kaidah manajemen perusahaan modern dengan tata kelola yang baik."</p>   
         </div>
     </section>
 
@@ -283,7 +283,7 @@ $cek=$cariuser['id_user'];
                     <div class="logo_footer">
                     <img src="Assets/logojmtxt.png" alt=""  class="mb-3">
                     </div>
-                    <h5 style="color:#004689; margin-top:10px; font-family: 'Caveat';font-size: 30px;"><i>Footer dsbg</i></h5>
+                    <h5 style="color:#004689; margin-top:10px; font-family: 'Caveat';font-size: 30px;"><i></i></h5>
                     
                   </div>
                 </div>
@@ -353,7 +353,7 @@ $cek=$cariuser['id_user'];
             <div class="row">
               <div class="col-md-12">
                 <div class="copyright-text">
-                  <p>© 2021 Brown Fox All rights reserved.
+                  <p>© 2021 PKL Jasa Marga rights reserved.
                   </p>
                 </div>
       
