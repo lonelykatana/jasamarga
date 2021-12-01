@@ -222,7 +222,7 @@ if(isset($_POST['addprod'])){
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-sm-flex justify-content-between align-items-center">
-									<h2>Daftar Peserta</h2>
+									<h2>Daftar Laporan</h2>
 									</div>
                                     <div class="data-tables datatable-dark">
 										 <table id="dataTable3" class="display" style="width:100%"><thead class="thead-dark">
@@ -314,9 +314,7 @@ if(isset($_POST['addprod'])){
                             </div>
   </form>
 
-                            
-                       
-                    </div>
+		</div>
                 </div>
                 </div>
           </div>
@@ -406,7 +404,7 @@ if(isset($_POST['addprod'])){
             <div class="row">
               <div class="col-md-12">
                 <div class="copyright-text">
-                  <p>© PKL Jasa Marga All rights reserved.
+                  <p>© 2021 PKL Jasa Marga All rights reserved.
                   </p>
                 </div>
       

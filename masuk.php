@@ -290,7 +290,7 @@ else if( password_verify($pass, $cariuser['password']) ) {
             <div class="row">
               <div class="col-md-12">
                 <div class="copyright-text">
-                  <p>© Brown Fox STUDYBOX All rights reserved.
+                  <p>©2021 PKL Jasa Marga All rights reserved.
                   </p>
                 </div>
       
